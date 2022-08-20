@@ -1,0 +1,48 @@
+query{
+  movies {
+    title
+    released
+    actors {
+      name
+      movies {
+        title
+      }
+    }
+  }
+}
+
+# query{
+#   movies(where: { title: "The Matrix" }) {
+#     title
+#     released
+#   }
+# }
+
+# {
+#   movies(where: { title: "River Runs Through It" }) {
+#     title
+#     actorsConnection(first: 10, after: "opaqueCursor") {
+#       edges {
+#         roles
+#         node {
+#           name
+#         }
+#       }
+#       pageInfo {
+#         endCursor
+#         hasNextPage
+#       }
+#     }
+#   }
+# }
+
+# query{
+#   moviesConnection(first: 3) {
+#     totalCount
+#  	 edges {
+#       node {
+#         title
+#       }
+#     }
+#   }
+# }
